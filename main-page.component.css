@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Lemonada&display=swap');
+.header {
+width: auto;
+height: 70px;
+
+}
+.main-page {
+width: auto;
+height: 555px;
+
+
+}
+div.meal a{
+    color:red;
+    font-size: 40px;
+}
+.top-4 {
+    width: auto;
+    height: 380px;
+}
+.advice {
+    width: auto;
+    height: 380px;
+}
+.footer {
+    width: auto;
+    height: 250px;
+    background-color: rgb(39, 39, 39);
+    border-top: 3px solid black;
+}
+.elements {
+position: absolute;
+left:30%;
+}
+.elements a {
+margin-right: 150px;
+line-height: 4;
+color:black;
+font-weight: 700;
+text-decoration: none;
+font-family: 'Lemonade',cursive;
+}
+.logo {
+position: absolute;
+top: 0px;
+left: 0px;
+}
+.nutritional-img{
+display: flex;
+justify-content: space-around;
+}
+.nutritional-img img{
+margin-top: 40px;
+border-radius: 50%;
+}
+.top-4 h2{
+text-align: center;
+margin-top: 30px;
+color:red;
+font-family: 'Lemonada',cursive;
+}
+.names-img {
+display: flex;
+justify-content: space-around;
+}
+.names-img h3{
+margin-top: 15px;
+font-family: 'Lemonada',cursive;
+}
+.names-img .tuna{
+margin-left: 35px;
+}
+.almond{
+margin-left: 20px;
+}
+.almond-values {
+position: absolute;
+top:790px;
+left:6%;
+font-size: 15px;
+color:black;
+font-weight: 700;
+display: none;
+}
+.almond-img:hover  p {
+display: block;
+}
+.advice img{
+position: absolute;
+top:1050px;
+left:150px;
+border-radius: 5px;
+}
+.advice p{
+position: absolute;
+top:1050px;
+left:580px;
+font-family: 'Lemonade',cursive;
+font-size: 25px;
+text-indent: 100px;
+
+}
+.footer-map {
+color:white;
+font-size: 24px;
+}
+.footer-map i{
+    display: block;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.footer-info {
+margin-left: 180px;
+margin-top: 30px;
+
+}
+.footer h3{
+position: absolute;
+top:1430px;
+left:850px;
+width: 140px;
+height: 45px;
+border-bottom: 3px solid white;
+}
+.about-us {
+position: absolute;
+top:1480px;
+left:850px;
+font-size: 15px;
+
+}
+.social a{
+display: inline;
+margin-right: 15px;
+position: relative;
+top:155opx;
+left:850px;
+}
