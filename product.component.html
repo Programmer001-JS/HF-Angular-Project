@@ -1,0 +1,66 @@
+<div class="header">
+<h1>Choose our product</h1>
+<a routerLink="/main-page">&lt;&nbsp;BACK</a>
+</div>
+<div class="product1">
+
+<div class="Tropical">
+<img src="../../assets/product1.png" alt="Smoothies1" width="150px" height="250px">
+<h5 style="font-family: Lemonada,cursive;">Tropical Power Shake</h5>
+<div class="price">
+    <p style="font-size: 25px; color:red;">price - 7.99 $</p>
+  </div>
+<button  class="values" data-toggle="collapse" data-target="#demo">Show values</button>
+<div id="demo" class="collapse">
+<p> -12 oz water, milk, or yogurt,<br>
+    -2 scoops vanilla flavored protein powder,<br>
+    -½ banana,<br>
+    -1 cup of pineapple,<br>
+    -1 cup of spinach,<br>
+    -1 tbsp of ground flax,<br>
+    -2 tbsp of unsweetened coconut flakes,<br>
+    -½ cup plain yogurt or vegan alternative<br>
+</p>
+<hr>
+<p> 
+    525 calories,<br>
+    58 grams protein,<br>
+    12 g fat,<br>
+    46 g carbs,<br>
+    8.5 g fiber,<br>
+    (accounts for using water as the fluid instead of milk or yogurt)
+
+</p>
+
+</div><br>
+<button class="btn btn-danger" style="width: 150px;" (click)="buyNow()">Buy Now</button>
+</div>   
+</div>  
+
+<form *ngIf="orderForm" [formGroup]="myGroup" action="/healtyfood" method="POST">
+  <div class="form-group">
+    <label for="exampleInputAddress"></label>
+    <input type="address"  formControlName="Address" class="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Enter your location:">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPhone"></label>
+    <input type="number" formControlName="Phone" class="form-control" id="exampleInputPhone" placeholder="Enter your phone number:">
+  </div>
+  <div class="form-group" [(ngModel)]="num1">7.99$:
+    <input type="number" formControlName="Quantity" style="width: 70px;" min="0" step="1" name="num2" [(ngModel)]="num2">&nbsp;Quantity
+    <h3>For payment:<h2  [style.color]="'red'"> {{num3}}$</h2></h3>
+  </div> 
+    <div class="form-group">
+  <button type="submit" class="btn btn-success" style="width: 90px; margin-right: 10px;" (click)="calcNow()">Calculate</button>
+  <button type="submit" class="btn btn-primary" style="width: 150px; margin-right: 10px;" (click)="orderNow()">Order Now</button>
+  <button type="submit" class="btn btn-secondary" style="width: 70px;" (click)="onClose()">Close</button>
+ 
+</div>  
+</form>
+
+<div class="correct" *ngIf="msgSent">
+  <img src="../../assets/correct.png" alt="send" width="200px" height="220px">
+  <p style="font-size: 25px;">Message has been sent!</p>
+  <button class="btn btn-secondary" (click)="closeOrder()">Close</button>
+</div>
