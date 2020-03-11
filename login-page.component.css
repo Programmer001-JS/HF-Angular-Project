@@ -1,0 +1,15 @@
+.container-fluid {
+display: grid;
+grid-template-columns: 43% auto;
+position: absolute;
+top:0px;
+
+}
+.login-img a{
+color:red;
+font-size: 20px;
+text-decoration: none;
+position: absolute;
+top:420px;
+
+}
