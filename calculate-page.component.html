@@ -1,0 +1,145 @@
+
+
+<table class="table">
+  
+  <tr>
+    <th>Food (100g)</th>
+    <th>Protein</th>
+    <th>Fiber</th>
+    <th>Carbohydrates</th>
+    <th>% Fat</th>
+    <th>Sugars</th>
+    <th>Nutritional values</th>
+    
+  </tr>
+  <tr>
+    <td style="color:red">Tuna</td>
+    <td>23.3g</td>
+    <td>$100</td>
+    <td>0g</td>
+    <td>4.9%</td>
+    <td>0g</td>
+    <td>114</td>
+  </tr>
+  <tr>
+    <td style="color:red">Almond</td>
+    <td>21g</td>
+    <td>6.8g</td>
+    <td>21g</td>
+    <td>21%</td>
+    <td>5.3g</td>
+    <td>579</td>
+  </tr>
+  <tr>
+    <td style="color:red">Eggs</td>
+    <td>6.3g</td>
+    <td>0</td>
+    <td>0</td>
+    <td>5.3%</td>
+    <td>1.6g</td>
+    <td>77</td>
+  </tr>
+  <tr>
+    <td style="color:red">Avokado</td>
+    <td>4.6g</td>
+    <td>$80</td>
+    <td>19.2g</td>
+    <td>5%</td>
+    <td>0g</td>
+    <td>368</td>
+  </tr>
+  <tr>
+    <td style="color:red">Chicken</td>
+    <td>30g</td>
+    <td>0</td>
+    <td>0</td>
+    <td>18%</td>
+    <td>0</td>
+    <td>165</td>
+  </tr>
+</table>
+
+<h2>Create your meal:</h2>
+<form>
+<div class="check-food">
+  
+  <label class="table1">
+  <strong class="text-header" style="color:blue">Fish</strong><br>
+  <input class="my-activity" type="checkbox" name="Tuna" value="35"><span>Tuna (35$)</span><br>
+  <input class="my-activity" type="checkbox" name="Salmon" value="30"><span>Salomon (30$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Lobster" value="50"><span>Lobster (50$)</span><br/>        
+</label> 
+<label class="table2">
+  <strong class="text-header" style="color:blue">Nuts</strong><br>      
+  <input class="my-activity" type="checkbox" name="Almond" value="2"><span>Almond (2$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Indian" value="3"><span>Indian Nut (3$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Brazilian" value="2"><span>Brazilian Nut (2$)</span><br/>        
+</label>
+<label class="table3">
+  <div>
+  <strong class="text-header" style="color:blue">Eggs And Milk</strong><br>      
+  </div>
+  <input class="my-activity" type="checkbox" name="eggs" value="1"><span>Eggs(5) (1$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Almond milk" value="2"><span>Almond Milk (2$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Rise milk" value="3"><span>Rise Milk (3$)</span><br/>        
+</label>
+ <label class="table4"> 
+  <strong class="text-header" style="color:blue">Vegetabels</strong><br>      
+  <input class="my-activity" type="checkbox" name="avokado" value="1"><span>Avokado (1$)</span><br/>
+  <input class="my-activity" type="checkbox" name="mango" value="2"><span>Mango (2$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Papaya" value="2"><span>Papaya (2$)</span><br/>        
+</label>
+<label class="table5">
+  <strong class="text-header"style="color:blue">Meat</strong><br>        
+  <input class="my-activity" type="checkbox" name="Beef" value="12"><span>Beef (12$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Chicken" value="5"><span>Chicken (5$)</span><br/>
+  <input class="my-activity" type="checkbox" name="Ribs" value="9"><span>Ribs (9$)</span><br/>        
+</label>
+</div>
+</form>
+<div class="amount">
+  <p>Amount (US $):</p><br>
+<input type="text" name="amount" id="amount" disabled/>
+</div>
+<div class="order-button">
+<button class="btn btn-danger" style="width:120px"(click)="buyNow()">Buy Now</button>
+</div>
+<p style="text-align: center;"><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry.
+   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+   <div class="back">
+    <a routerLink="/main-page" style="color:black; font-weight: 600;">&lt;&nbsp;BACK</a>
+   </div>
+
+<div  class="order-form" *ngIf=orderMeal>
+  <form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()" action="/healtyfood" method="POST">
+    <h3 style="margin-top: 15px;">Your information:</h3>
+    <div class="form-group">
+      <label for="userName">Your Address:</label>
+      <input  type="text" class="form-control" formControlName="Address"  
+         [ngClass]="{'is-invalid': form.get('Address').touched && 
+        form.get('Address').invalid}"/>
+        <div class="invalid-feedback">
+          <div>Address is required</div>
+  
+        </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input  type="Number" class="form-control" formControlName="Phone"  
+           [ngClass]="{'is-invalid': form.get('Phone').touched && 
+          form.get('Phone').invalid}"/>
+          <div *ngIf="form.get('Phone').touched && form.get('Phone').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('Phone').errors.required">Phone is required</div>
+            <div *ngIf="form.get('Phone').errors.minlength">Phone is must be a letaset 6 characters</div>
+         </div>
+      </div>
+          <div class="form-group">  
+            <button type="submit" class="btn btn-primary" style="width: 120px;" [disabled]="!form.valid">Order Now</button>
+            <button class="btn btn-secondary" style="width: 80px;"(click)="closeNow()">Close</button><br>
+          <p>{{name}}</p>
+          </div>
+      
+ 
+</form>
+</div>
